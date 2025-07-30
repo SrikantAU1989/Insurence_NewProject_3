@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {
         maven 'Maven 3'  // Configure in Jenkins > Global Tool Config
-        jdk 'JDK11'      // Same here
+        jdk 'JDK17'      // Same here
     }
     stages {
         stage('Clone') {
