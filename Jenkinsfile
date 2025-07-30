@@ -10,6 +10,11 @@ pipeline {
                 git 'https://github.com/SrikantAU1989/Insurence_NewProject_3.git'
             }
         }
+        stage('Build - Skip Tests') {
+            steps {
+                sh 'mvn clean install -DskipTests'
+            }
+        }
         stage('Build') {
             steps {
                 sh 'mvn clean package'
