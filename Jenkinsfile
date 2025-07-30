@@ -27,7 +27,7 @@ pipeline {
                     docker rm insureme-container || true
                     docker rmi insureme-img || true
                     docker build -t insureme-img .
-                    docker run -d -p 8091:8080 --name insureme-container insureme-img
+                    docker run -d -p 3306:8080 --name insureme-container insureme-img
                 '''
             }
         }
