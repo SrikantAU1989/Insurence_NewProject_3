@@ -1,15 +1,11 @@
-# Use a lightweight OpenJDK base image
+# Use a minimal Java image
 FROM openjdk:17-jdk-slim
 
-# Add metadata
-LABEL maintainer="SRIKANT"
+# Set the working directory
+WORKDIR /app
 
-# Copy the Spring Boot jar into the container
-COPY target/*.jar InsuranceManagementSystem-0.0.1-SNAPSHOT.jar
+# Copy the built JAR into the image
+COPY target/InsuranceManagementSystem-0.0.1-SNAPSHOT.jar app.jar
 
-
-# Expose port Spring Boot runs on
-EXPOSE 8091
-
-# Run the application
-ENTRYPOINT ["java", "-jar", "InsuranceManagementSystem-0.0.1-SNAPSHOT.jar"]
+# Run the JAR
+ENTRYPOINT ["java", "-jar", "app.jar"]
