@@ -9,7 +9,7 @@ COPY target/*.jar InsuranceManagementSystem-0.0.1-SNAPSHOT.jar.original
 
 
 # Expose port Spring Boot runs on
-EXPOSE 8091
+EXPOSE 3306
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "InsuranceManagementSystem-0.0.1-SNAPSHOT.jar.original"]
