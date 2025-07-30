@@ -1,11 +1,14 @@
-# Use OpenJDK 17 as base image
+# Use a lightweight OpenJDK base image
 FROM openjdk:17-jdk-slim
 
-# Set the working directory
-WORKDIR /app
+# Add metadata
+LABEL maintainer="SRIKANT"
 
-# Copy the built JAR from target directory (assumes Maven build done)
+# Copy the Spring Boot jar into the container
 COPY target/*.jar app.jar
 
-# Run the app
+# Expose port Spring Boot runs on
+EXPOSE 8080
+
+# Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
