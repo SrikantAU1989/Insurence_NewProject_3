@@ -5,11 +5,11 @@ FROM openjdk:17-jdk-slim
 LABEL maintainer="SRIKANT"
 
 # Copy the Spring Boot jar into the container
-COPY target/*.jar InsuranceManagementSystem-0.0.1-SNAPSHOT.jar
+COPY target/*.jar InsuranceManagementSystem-0.0.1-SNAPSHOT.jar.original
 
 
 # Expose port Spring Boot runs on
-EXPOSE 8080
+EXPOSE 8091
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "InsuranceManagementSystem-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "InsuranceManagementSystem-0.0.1-SNAPSHOT.jar.original"]
